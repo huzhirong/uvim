@@ -76,9 +76,6 @@ snippet docts
 snippet doct
 	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""
 	"http://www.w3.org/TR/html4/loose.dtd">
-# HTML Doctype 5
-snippet doct5
-	<!DOCTYPE HTML>
 # XHTML Doctype 1.0 Frameset
 snippet docxf
 	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
@@ -107,7 +104,11 @@ snippet body
 	<body>
 		${1}
 	</body>
-snippet head
+snippet head SIMPLE
+	<head>
+		${1}
+	</head>
+snippet head ALL
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8"`Close()`>
 
@@ -188,3 +189,35 @@ snippet table
 	</table>${4}
 snippet textarea
 	<textarea name="${1:Name}" rows="${2:8}" cols="${3:40}">${4}</textarea>${5}
+# HTML 5 
+# HTML Doctype 5
+snippet html5
+	<!DOCTYPE HTML>
+snippet aside
+	<aside>
+		${1}
+	</aside>
+snippet article
+	<article>
+		${1}
+	</article>
+snippet header
+	<header>
+		${1}
+	</header>
+snippet footer
+	<footer>
+		${1}
+	</footer>
+snippet hgroup
+	<hgroup>
+		${1}
+	</hgroup>
+snippet section
+	<section>
+		${1}
+	</section>
+snippet nav
+	<nav>
+		${1}
+	</nav>

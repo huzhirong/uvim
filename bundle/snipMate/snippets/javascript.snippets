@@ -1,24 +1,35 @@
 # Prototype
 snippet proto
-	${1:class_name}.prototype.${2:method_name} =
-	function(${3:first_argument}) {
+	${1:class_name}.prototype.${2:method_name} = function(${3:first_argument}) {
 		${4:// body...}
 	};
 # Function
 snippet fun
-	function ${1:function_name} (${2:argument}) {
+	function ${1:function_name}(${2:argument}){
 		${3:// body...}
 	}
 # Anonymous Function
-snippet f
-	function(${1}) {${2}};
+snippet f 
+	function(${1:argument}){
+		${2://body...}
+	};
 # if
 snippet if
-	if (${1:true}) {${2}};
+	if (${1:true}){
+		${2}
+	}
 # if ... else
 snippet ife
-	if (${1:true}) {${2}}
-	else{${3}};
+	if (${1:true}){
+		${2}
+	}else{
+		${3}
+	}
+# else ...
+snippet else
+	else{
+		${1}
+	}
 # tertiary conditional
 snippet t
 	${1:/* condition */} ? ${2:a} : ${3:b}
@@ -42,12 +53,17 @@ snippet case
 snippet for
 	for (var ${2:i} = 0; $2 < ${1:Things}.length; $2${3:++}) {
 		${4:$1[$2]}
-	};
+	}
 # for (...) {...} (Improved Native For-Loop)
+# snippet forr
+# 	for (var ${2:i} = ${1:Things}.length - 1; $2 >= 0; $2${3:--}) {
+# 		${4:$1[$2]}
+# 	};
+# for (var i in obj)
 snippet forr
-	for (var ${2:i} = ${1:Things}.length - 1; $2 >= 0; $2${3:--}) {
-		${4:$1[$2]}
-	};
+	for (${1:var} ${2:i} in ${3:obj}){
+		${4}
+	}
 # while (...) {...}
 snippet wh
 	while (${1:/* condition */}) {
@@ -60,7 +76,7 @@ snippet do
 	} while (${1:/* condition */});
 # Object Method
 snippet :f
-	${1:method_name}: function(${2:attribute}) {
+	${1:method_name}:function(${2:attribute}) {
 		${4}
 	}${3:,}
 # setTimeout function
@@ -72,3 +88,23 @@ snippet get
 # Get Element
 snippet gett
 	getElementBy${1:Id}('${2}')${3}
+# Document
+snippet d
+	document
+# Get getElementById
+snippet getid
+	getElementById('${1}')${2}
+# Get getElementsByTagName
+snippet gettag
+	getElementsByTagName('${1}')${2}
+# (function(){})();
+snippet $
+	(function(${1:param}){
+		${3:body}
+	})(${2:param});
+snippet st
+	${1:param} : ${2:value}${3:,}
+snippet r
+	return ${1:retValue}
+snippet v
+	var ${1:var1} = ${2:var2}${3:;}

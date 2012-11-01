@@ -21,7 +21,7 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-h> <c-w>h
 map <c-l> <c-w>l
-map <space> ?
+"map <space> ?
 set cursorline "高亮当前行
 set cursorcolumn "高亮纵向行
 "set statusline=%h%=%-14.(%l,%c%V%)\ %<%p%%\ \ \ [%L]\ \ \ %{strftime('%y-%m-%d\ %A')}
@@ -40,6 +40,10 @@ call pathogen#infect()
 let Tlist_Show_One_File = 1
 let Tlist_Exit_OnlyWindow = 1
 
+let g:Tlist_Use_Right_Window=1
+let g:Tlist_Compact_Format=1
+let g:winManagerWindowLayout='FileExplorer|TagList' 
+
 "winmanager
 let g:winManagerWindowLayout='FileExplorer|TagList'
 nmap wm :WMToggle
@@ -47,6 +51,7 @@ nmap wm :WMToggle
 "NERDTree
 map nt :NERDTreeToggle
 let NERDTreeWinPos="right"
+let NERDTreeShowBookmarks=1
 
 "自动补全
 filetype plugin indent on
@@ -75,7 +80,7 @@ let g:no_html_toolbar = 'yes'
 let g:html_tag_case = 'lowercase'
 
 "VDBI
-"nmap <leader>v :VDBI<CR>
+nmap <leader>v :VDBI<CR>
 
 "command-t
 nmap <silent> <Leader>o :CommandT<CR>
@@ -95,7 +100,7 @@ syntax enable "开启语法
 syntax on "高亮语法
 filetype on
 filetype indent on
-nmap <F3> :Vimwiki2HTML<cr> "把当前wiki文件生成html                                                                                                      
+nmap <F3> :Vimwiki2HTML<cr> "把当前wiki文件生成html
 nmap <F4> :VimwikiAll2HTML<cr> "把所有wiki文件生成html
 let g:vimwiki_camel_case = 0 "不要将驼峰式词组作为Wiki词条
 let g:vimwiki_valid_html_tags='b,i,s,u,sub,sup,kbd,br,hr,div,del,code,red,center,left,right,h4,h5,h6,pre' "声明可以在wiki里面使用的HTML标签
@@ -103,3 +108,18 @@ let g:vimwiki_list = [{
            \ 'path': '/home/cry/vimwiki/',
            \ 'path_html': '/home/cry/vimwiki/html/',
            \ 'auto_export': 1,}]
+let g:vimwiki_list = [{'path': '/home/cry/vimwiki/wiki_techno/', 'path_html': '/home/cry/vimwiki/wiki_techno/html/', 'template_path': '/home/cry/vimwiki/wiki_techno/html/template/', 'template_default': 'default', 'template_ext': '.html', 'auto_export': 1},{'path': '/home/cry/vimwiki/wiki_literature/', 'path_html': '/home/cry/vimwiki/wiki_literature/html/', 'template_path': '/home/cry/vimwiki/wiki_literature/html/template/', 'template_default': 'default', 'template_ext': '.html', 'auto_export': 1}]                                
+let g:vimwiki_browsers=['/usr/bin/firefox'] "用firefox来预览wiki
+
+
+"javascript complete 
+"autocmd FileType python set omnifunc=pythoncomplete#Complete
+"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+"autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+"set omnifunc=javascriptcomplete#CompleteJS
+"setlocal omnifunc=javacomplete#Complete 
+"setlocal completefunc=javacomplete#CompleteParamsInfo 
+"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+"autocmd Filetype javascript inoremap <buffer> . .<C-X><C-O>
